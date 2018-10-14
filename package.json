@@ -1,6 +1,6 @@
 {
   "name": "fake-dialogs-editor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Fake JSON dialog files editor",
   "main": "main.js",
   "scripts": {

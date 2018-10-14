@@ -211,10 +211,82 @@ for (const elem of document.getElementsByClassName('removeMessage')) {
 
 // Add reply
 for (const elem of document.getElementsByClassName('addReply')) {
-    elem.addEventListener('click', function() {
-        const dIndex = parseInt(this.parentElement.parentElement.parentElement.dataset.dialog);
-        const mIndex = parseInt(this.parentElement.parentElement.parentElement.dataset.message);
+    const replyForm = document.createElement('form');
+    replyForm.className = 'ui reply tiny form';
+    replyForm.innerHTML = `
+        <div class="field">
+            <input type="text" placeholder="Message text...">
+        </div>
+        <button class="ui primary tiny submit labeled icon button" type="submit">
+            <i class="icon edit"></i> Add Reply
+        </button>
+    `;
 
-        // Add reply form
+    elem.addEventListener('click', function() {
+        const dIndex = parseInt(this.closest('.dialog').dataset.dialog);
+        const mIndex = parseInt(this.closest('.comment').dataset.message);
+
+        // Find message
+        const message = document.querySelectorAll(`[data-dialog="${dIndex}"] div[data-message="${mIndex}"]`)[0];
+
+        // Add active class to reply action
+        elem.classList.add('active');
+        
+        // Show reply form
+        const form = message.appendChild(replyForm);
+
+        // Handle form submit
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const text = this.querySelector('input').value;
+
+            if (!text) {
+                console.warn('Reply text cant be empty');
+                alert('Reply text cant be empty');
+                return;
+            }
+
+            // TODO: Show sidebar
+            // TODO: Add select user image & name
+            // TODO: Fix reply add to "comments" div
+
+            // Create reply message element
+            const messageElement = document.createElement('div');
+            messageElement.className = 'comment';
+
+            const messageAttr = document.createAttribute('data-message');
+            messageAttr.value = mIndex + 1;
+            messageElement.setAttributeNode(messageAttr);
+
+            messageElement.innerHTML = `
+                <a class="avatar">
+                    <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/42/42d7a36ecb7595fd6d1bdc4c8d8c05aafd498581_full.jpg">
+                </a>
+                <div class="content">
+                    <a class="author">NightOwl</a>
+                    <div class="text">${text}</div>
+                    <div class="actions">
+                        <a class="removeMessage">
+                            <i class="close icon"></i>
+                            Remove
+                        </a>
+                        <a class="addReply">
+                            <i class="plus icon"></i>
+                            Reply
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            // Add reply
+            message.parentNode.insertBefore(messageElement, message.nextSibling);
+
+            // Remove active class to reply action
+            elem.classList.remove('active');
+
+            // Remove form
+            form.remove();
+        });
     });
 }
