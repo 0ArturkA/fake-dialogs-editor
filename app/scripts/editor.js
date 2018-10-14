@@ -137,7 +137,6 @@ document.getElementById('returnToMainMenu').addEventListener('click', () => {
 
 // Save changes
 document.getElementById('saveChanges').addEventListener('click', () => {
-    console.log('saving...', dialogsData);
     fs.writeFile(dialogsData.path, JSON.stringify(dialogsData.dialogs), err => {
         if (err) {
             console.error('Saving dialogs file error', err.message);
@@ -145,7 +144,6 @@ document.getElementById('saveChanges').addEventListener('click', () => {
             return;
         }
 
-        console.log('success saved');
         alert('Success saved');
     });
 });
