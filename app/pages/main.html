@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fake Dialog Editor</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/semantic-ui-css/semantic.min.css">
+    <style>
+        body {
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui container">
+        <h2 class="ui icon center aligned header basic segment">
+            <i class="comments outline icon"></i>
+            <div class="content">
+                Fake Dialog Editor (FDE)
+                <div class="sub header">
+                    Help you create and edit fake dialogs for project created by Morbo | ArturkA
+                </div>
+            </div>
+        </h2>
+    </div>
+    <div class="ui placeholder segment">
+        <div class="ui two column stackable center aligned divided grid">
+            <div class="middle aligned row">
+                <div class="column">
+                    <div class="ui icon header">
+                        <i class="folder open outline icon"></i>
+                        Открыть существующий диалог
+                    </div>
+                    <div class="ui primary button" id="openDialogFile">Открыть</div>
+                </div>
+                <div class="column">
+                    <div class="ui icon header">
+                        <i class="plus icon"></i>
+                        Создать новый диалог
+                    </div>
+                    <div class="ui positive button" id="createDialogFile">Создать</div>
+                    <br>
+                    <div class="ui checkbox">
+                        <input type="checkbox" id="addDialogExample">
+                        <label>Добавить пример диалогов</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui container">
+        <div class="ui segment basic">
+            <h4 class="ui header">Путь к списку с фейк пользователями</h4>
+            <div class="ui icon fluid input">
+                <input type="text" value="Default" id="fakeUsersListPath" readonly>
+                <i class="circular folder open outline link icon" id="selectFakeUsersListPath"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

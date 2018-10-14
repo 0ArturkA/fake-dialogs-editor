@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fake Dialog Editor</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/semantic-ui-css/semantic.min.css">
+    <style>
+        body {
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui right sidebar inverted compact vertical menu" id="usersList"></div>
+    <div class="pusher">
+        <div class="ui segment basic" id="dialogsList">
+            <div class="ui small header">
+                <div class="content">
+                    <span id="filePath"></span>
+                    <div class="sub header">Редактирование диалогов</div>
+                </div>
+            </div>
+            <a class="ui negative tiny labeled icon button" id="returnToMainMenu">
+                <i class="left arrow icon"></i>
+                Вернутся на главное окно
+            </a>
+            <a class="ui positive tiny right labeled icon button" id="saveChanges">
+                <i class="save icon"></i>
+                Сохранить файл
+            </a>
+            <div class="ui divider"></div>
+        </div>
+    </div>
+
+    <script src="../scripts/editor.js"></script>
+</body>
+</html>

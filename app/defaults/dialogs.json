@@ -1,0 +1,76 @@
+[
+	[
+		{
+			"userIndex": 0,
+			"text": "Hello"
+		},
+		{
+			"userIndex": 1,
+			"replyMessageIndex": 0,
+			"text": "Hi"
+		},
+		{
+			"userIndex": 0,
+			"replyMessageIndex": 1,
+			"text": "How are you?"
+		},
+		{
+			"userIndex": 1,
+			"replyMessageIndex": 2,
+			"text": "Good by"
+		},
+		{
+			"userIndex": 1,
+			"replyMessageIndex": 2,
+			"text": "Go classic"
+		}
+	],
+	[
+		{
+			"userIndex": 2,
+			"text": "GG"
+		},
+		{
+			"userIndex": 3,
+			"replyMessageIndex": 0,
+			"text": "WP"
+		}
+	],
+	[
+		{
+			"userIndex": 4,
+			"text": "Hey guys"
+		},
+		{
+			"userIndex": 3,
+			"replyMessageIndex": 0,
+			"text": "Hello"
+		},
+		{
+			"userIndex": 2,
+			"replyMessageIndex": 0,
+			"text": "Hi"
+		},
+		{
+			"userIndex": 1,
+			"replyMessageIndex": 0,
+			"text": "Hey"
+		}
+	],
+	[
+		{
+			"userIndex": 5,
+			"text": "What the weather like today?"
+		},
+		{
+			"userIndex": 3,
+			"replyMessageIndex": 0,
+			"text": "Sun"
+		},
+		{
+			"userIndex": 2,
+			"replyMessageIndex": 0,
+			"text": "Rain"
+		}
+	]
+]

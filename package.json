@@ -1,0 +1,15 @@
+{
+  "name": "fake-dialogs-editor",
+  "version": "1.0.0",
+  "description": "Fake JSON dialog files editor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "ArturkA",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^3.0.4",
+    "semantic-ui-css": "^2.4.0"
+  }
+}
