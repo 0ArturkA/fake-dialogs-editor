@@ -15,6 +15,8 @@ app.on('ready', () => {
     if (process.env.NODE_ENV === 'production') {
         mainWindow.setMenu(null);
     }
+
+    mainWindow.on('closed', () => app.quit());
 });
 
 ipcMain.on('loadPage', (event, arg) => {
